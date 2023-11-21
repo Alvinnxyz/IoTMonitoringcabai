@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -56,7 +57,8 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              "Monday, 20th November", // Dynamic date can be placed here
+              DateFormat('EEEE, dd MMMM yyyy ')
+                  .format(DateTime.now()), // Format the current date and time
               style: TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
