@@ -1,8 +1,8 @@
 // welcome_page.dart
 import 'package:flutter/material.dart';
 import 'package:iotappsmonitoringcabai/mainmenu.dart';
-import 'homepage.dart';
-import 'mainmenu.dart'; // Import HomePage
+import 'package:iotappsmonitoringcabai/widgets/button.dart';
+import 'theme.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -10,54 +10,67 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: EdgeInsets.all(16.0),
+      backgroundColor: lightBackgroundColor,
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Text(
-              'Revitalize your green space',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.green,
-              ),
+          children: [
+            Image.asset(
+              'assets/onboard.png',
+              height: 331,
+              width: 288.3,
             ),
-            SizedBox(height: 20.0), // For spacing
-            Expanded(
-              // Container to hold the image
-              child: Image.asset(
-                'assets/tumbuhaniot.png', // Replace with your local image asset path
-                fit: BoxFit.contain,
+            const SizedBox(height: 80),
+            Container(
+              margin: const EdgeInsets.symmetric(
+                horizontal: 24,
               ),
-            ),
-            SizedBox(height: 20.0), // For spacing
-            Text(
-              'Grow healthy plants\nGrow a happier life',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 18.0,
-                color: Colors.black54,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 22,
+                vertical: 24,
               ),
-            ),
-            SizedBox(height: 40.0), // For spacing
-            ElevatedButton(
-              child: const Text('Go'),
-              onPressed: () {
-                // Navigate to HomePage
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MainMenu()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.green,
-                padding: EdgeInsets.symmetric(vertical: 16.0),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
+              decoration: BoxDecoration(
+                color: whiteColor,
+                borderRadius: BorderRadius.circular(
+                  20,
                 ),
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    'Revitalize your\ngreen space',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 20,
+                      fontWeight: semibold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(
+                    height: 26,
+                  ),
+                  Text(
+                    'Grow healthy plants\nGrow a happier life',
+                    style: greyTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: regular,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Column(
+                    children: [
+                      CustomFilledButton(
+                        title: 'Go',
+                        onPressed: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, '/mainmenu', (route) => false);
+                        },
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
           ],
