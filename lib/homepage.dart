@@ -33,14 +33,14 @@ class _HomePageState extends State<HomePage> {
           });
 
           // Check if humidity is greater than 400 and trigger notification
-          if (humidity > 400) {
+          if (humidity < 60) {
             AwesomeNotifications().createNotification(
               content: NotificationContent(
                 id: 1,
                 channelKey: "basic_channel",
                 title: "Tumbuhan kamu butuh air!!!",
                 body:
-                    "Skor kelembapan dibawah 400 :(  Kelembapan saat ini: $humidity%",
+                    "Skor kelembapan dibawah 60 :(  Kelembapan saat ini: $humidity%",
               ),
             );
           }
@@ -118,20 +118,20 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          AwesomeNotifications().createNotification(
-            content: NotificationContent(
-                id: 1,
-                channelKey: "basic_channel",
-                title: "Hello world!",
-                body: "Yay! I have local notifications working now!"),
-          );
-        },
-        child: const Icon(
-          Icons.notification_add,
-        ),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     AwesomeNotifications().createNotification(
+      //       content: NotificationContent(
+      //           id: 1,
+      //           channelKey: "basic_channel",
+      //           title: "Hello world!",
+      //           body: "Yay! I have local notifications working now!"),
+      //     );
+      //   },
+      //   child: const Icon(
+      //     Icons.notification_add,
+      //   ),
+      //),
     );
   }
 }

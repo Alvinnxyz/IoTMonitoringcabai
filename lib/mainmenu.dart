@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:iotappsmonitoringcabai/homepage.dart';
 import 'package:iotappsmonitoringcabai/widgets/tips.dart';
 import 'package:iotappsmonitoringcabai/widgets/tumbuhanitem.dart';
+
 import 'theme.dart';
-import 'homepage.dart';
 
 class MainMenu extends StatelessWidget {
   const MainMenu({super.key});
@@ -128,24 +127,28 @@ class MainMenu extends StatelessWidget {
             runSpacing: 18,
             children: [
               HomeTipsItem(
-                imageUrl: 'assets/img_tips1.png',
+                imageUrl: 'assets/tips1.jpg',
                 title: 'Tips terbaik untuk\nmenanam cabai',
-                url: 'https://www.google.com',
+                url:
+                    'https://mediaindonesia.com/humaniora/571822/ini-cara-menanam-cabai-dari-biji-di-rumah',
               ),
               HomeTipsItem(
-                imageUrl: 'assets/img_tips2.png',
+                imageUrl: 'assets/tips2.jpg',
                 title: 'Tumbuhan lebat\nhati senang',
-                url: 'https://www.google.com',
+                url:
+                    'https://bibitbunga.com/cara-membuat-tanaman-cepat-berbuah/',
               ),
               HomeTipsItem(
-                imageUrl: 'assets/img_tips3.png',
-                title: 'jangan lupa makan\nsemangat guys',
-                url: 'https://www.google.com',
+                imageUrl: 'assets/tips3.jpg',
+                title: 'Tumbuhan sehat\nterbebas dari hama',
+                url:
+                    'https://indihome.co.id/blog/lindungi-tanaman-kesayangan-dari-hama-dengan-ikuti-10-cara-berikut-ini',
               ),
               HomeTipsItem(
-                imageUrl: 'assets/img_tips4.png',
-                title: 'Alvin\nganteng',
-                url: 'https://www.google.com',
+                imageUrl: 'assets/tips4.jpg',
+                title: 'Membuat pupuk\norganik yuk!',
+                url:
+                    'https://distan.bulelengkab.go.id/informasi/detail/artikel/cara-membuat-pupuk-organik-18',
               ),
             ],
           )
